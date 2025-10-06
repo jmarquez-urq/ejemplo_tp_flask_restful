@@ -1,0 +1,36 @@
+{
+    "docente1": {
+        "password": "$2b$12$EDJeuktn3s4V0C6sUbcQ/eCn07NuQRRkIoOGJivFeK5uLXHwlFKiK",
+        "role": "admin",
+        "sigue_a": [
+            "docente1",
+            "alicia",
+            "docente2"
+        ]
+    },
+    "docente2": {
+        "password": "$2b$12$CvxnyjQbY8FIXjT0AcyLB.6U0Y.d9aZd/8K37yuhfSmWb8PmeWE2a",
+        "role": "admin",
+        "sigue_a": [
+            "docente2",
+            "bruno"
+        ]
+    },
+    "alicia": {
+        "password": "$2b$12$9Xb4De/VIbi5vB38FModx.UIM4eZlwV.wCOw4r37luQ9pgJn5xvru",
+        "role": "user",
+        "sigue_a": [
+            "alicia",
+            "bruno"
+        ]
+    },
+    "bruno": {
+        "password": "$2b$12$OVQIb55/No59np5lxqepSOVyKqu63h56QfNgkSCV3EJmqN1641fAK",
+        "role": "user",
+        "sigue_a": [
+            "bruno",
+            "docente2",
+            "alicia"
+        ]
+    }
+}
