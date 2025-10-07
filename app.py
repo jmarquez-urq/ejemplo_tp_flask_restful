@@ -5,7 +5,7 @@ from datetime import timedelta
 
 # Importamos los resources refiriendo al nuevo destino:
 from resources.auth import Registro, Login
-from resources.users import SoloParaUsuarios, SoloParaDocentes
+from resources.links import Links
 
 app = Flask(__name__)
 api = Api(app)
@@ -22,8 +22,9 @@ jwt = JWTManager(app)
 # Rutas:
 api.add_resource(Registro, "/registro") # Ruta para cualquier request por post
 api.add_resource(Login, "/login")       # Ruta para cualquier request por post
-api.add_resource(SoloParaUsuarios, "/soloparausuarios") # Ruta por GET para cualquier usuario autenticado
-api.add_resource(SoloParaDocentes, "/soloparadocentes") # Ruta por GET para usuarios con role = "docente"
+
+# Agregamos una nueva ruta. Acepta dos variantes: con o sin parámetro id_enlace
+api.add_resource(Links, "/links", "/links/<int:id_enlace>")
 
 # Rutas estáticas:
 @app.route("/")
@@ -37,6 +38,15 @@ def serve_usuarios():
 @app.route("/docentes")
 def serve_docentes():
     return send_from_directory("static", "docentes.html")
+
+# Agregamos las dos nuevas direcciones de enrutamiento estático:
+@app.route("/guardar_enlace")
+def serve_guardar_enlace():
+    return send_from_directory("static", "guardar_enlace.html")
+
+@app.route("/enlaces")
+def serve_enlaces():
+    return send_from_directory("static", "enlaces.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

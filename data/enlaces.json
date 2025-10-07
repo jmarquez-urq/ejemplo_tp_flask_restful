@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "url": "https://es.wikipedia.org",
+        "titulo": "Wikipedia",
+        "descripcion": "Enciclopedia colaborativa",
+        "autor": "bruno"
+    },
+    {
+        "id": 2,
+        "url": "https://juansemarquez.com/prog1",
+        "titulo": "Programación 1",
+        "descripcion": "Clases de Programación 1",
+        "autor": "bruno"
+    },
+    {
+        "id": 3,
+        "url": "https://rosario.gob.ar",
+        "titulo": "Municipalidad de Rosario",
+        "descripcion": "Sitio oficial",
+        "autor": "alicia"
+    }
+]
