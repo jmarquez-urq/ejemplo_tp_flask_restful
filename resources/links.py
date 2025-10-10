@@ -28,8 +28,6 @@ def obtener_siguiente_id(enlaces):
 def puede_borrar_enlace(enlace, usuario):
     '''Retorna True si el usuario puede borrar en enlace, False si no puede. Un
     usuario puede borrar un enlace cuando es el autor, o cuando tiene rol admin'''
-    print(usuario.get('username'))
-    print(enlace)
     if usuario.get('role') == 'admin':
         return True
     elif usuario.get('username') == enlace.get('autor'):
