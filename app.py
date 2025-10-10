@@ -31,14 +31,6 @@ api.add_resource(Links, "/links", "/links/<int:id_enlace>")
 def serve_index():
     return send_from_directory("static", "login.html")
 
-@app.route("/usuarios")
-def serve_usuarios():
-    return send_from_directory("static", "usuarios.html")
-
-@app.route("/docentes")
-def serve_docentes():
-    return send_from_directory("static", "docentes.html")
-
 # Agregamos las dos nuevas direcciones de enrutamiento estático:
 @app.route("/guardar_enlace")
 def serve_guardar_enlace():
